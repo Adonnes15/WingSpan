@@ -11,6 +11,8 @@ const defaultEmployee = {
   password: '',
   'stack/skillset': '',
   manager_name:'',
+  roles:'',
+  permission:'',
 };
 
 const API_URL = "http://localhost:1433/api/users";
@@ -70,7 +72,7 @@ const EmployeeCrud = () => {
         toast.success("Employee updated");
       } 
       else {
-        console.log("hello",employee.manager_name)
+        // console.log("hello",employee.manager_name)
         // if (employee.reportingMgr.length==0){
         //   employee.reportingMgr=null;
         // }
@@ -121,9 +123,10 @@ const EmployeeCrud = () => {
           <tr>
             <th>Employee Name</th>
             <th>Username</th>
-            <th>password</th>
-            <th>Stack/Skillset</th>
             <th>reporting Manager(Self Join)</th>
+            <th>Stack/Skillset</th>
+            <th>role</th>
+            <th>Permissions(FK Join)</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -133,9 +136,10 @@ const EmployeeCrud = () => {
               <tr key={emp.id}>
                 <td>{emp.EmployeeName}</td>
                 <td>{emp.username}</td>
-                <td>{emp.password}</td>
-                <td>{emp['stack/skillset']}</td>
                 <td>{emp.manager_name}</td>
+                <td>{emp['stack/skillset']}</td>
+                <td>{emp.roles}</td>
+                <td>{emp.permission}</td>
                 <td>
                   <button
                     className="btn btn-warning me-2"
@@ -203,6 +207,14 @@ const EmployeeCrud = () => {
                 name="password"
                 placeholder="Enter password"
                 value={employee.password || ''}
+                onChange={handleInputChange}
+                className="form-control mb-3"
+              />
+              <input
+                type="text"
+                name="roles"
+                placeholder="Enter roles"
+                value={employee.roles || ''}
                 onChange={handleInputChange}
                 className="form-control mb-3"
               />

@@ -1,0 +1,1 @@
+UPDATE [User] SET EmployeeName = @EmployeeName,username = @username,password=@password,[stack/skillset] = @skillset,roles=(SELECT role FROM [role] WHERE role =@roles),reportingMgr = (SELECT id FROM [User] WHERE EmployeeName = @reportingMgr) WHERE id = @id
