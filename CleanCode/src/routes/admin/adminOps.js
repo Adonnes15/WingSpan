@@ -1,6 +1,6 @@
 const {Router}= require('express')
 const bodyParser=require('body-parser')
-const {getAllUsers,getByID,deleteUser,updateUserInfo,newUser}=require('../admin/controllers/AdminOps')
+const {getAllUsers,getByID,deleteUser,updateUserInfo,newUser}=require('../../controllers/AdminOps.js')
 const activityMonitor=require("./activityMonitor.js")
 const router=Router()
 router.use(bodyParser.json());

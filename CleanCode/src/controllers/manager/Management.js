@@ -1,4 +1,4 @@
-const Connection=require('../helpers/database')
+const Connection=require('../../helpers/database')
 
 const db=new Connection()
 

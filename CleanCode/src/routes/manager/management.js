@@ -1,25 +1,25 @@
 const {Router}= require('express')
 const bodyParser=require('body-parser')
-const {getProjectList,getProjectStats,addProject,addTask}=require('../../controllers/manager/Management.js')
+const {getProjectList,addProject,addTask}=require('../../controllers/manager/Management.js')
 
 const router=Router()
 router.use(bodyParser.json());
 
 // project management_______________
 router
-route('/PM')
+.route('/PM')
 .get(getProjectList)
 .post(addProject)
 
 router
-route('/PM/:project')
-.get(getProjectStats)
+.route('/PM/:project')
+// .get(getProjectStats)
 .post(addTask)
-.put(statusUpdate)
+// .put(statusUpdate)
 
 // Resource management______________
 router
-route('/RM')
+.route('/RM')
 .get(getProjectList)
 
 

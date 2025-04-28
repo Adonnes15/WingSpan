@@ -122,3 +122,7 @@ exports.newUser=async(req,res)=>{
         })
     }
 }
+
+exports.getUserActivity=async(req,res)=>{
+    res.send({"message":"we ok"})
+}
