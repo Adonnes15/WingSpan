@@ -1,0 +1,1 @@
+INSERT INTO [User](EmployeeName,username,password,[stack/skillset],reportingMgr,roles) VALUES(@EmployeeName,@username,@password,@skill,(SELECT id FROM [User] WHERE EmployeeName = @manager),@roles)
